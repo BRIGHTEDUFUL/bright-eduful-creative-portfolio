@@ -15,7 +15,7 @@ export function ProjectsSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
@@ -35,7 +35,7 @@ export function ProjectsSection() {
                 key={project.number}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.55, delay: idx * 0.1 }}
                 className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card/85 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60"
               >

@@ -9,7 +9,7 @@ export function ExperienceSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
           className="mb-14 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"
         >
@@ -40,7 +40,7 @@ export function ExperienceSection() {
                 key={exp.company}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 className="group rounded-2xl border border-border bg-card/80 p-6 transition-colors hover:border-primary/50"
               >
@@ -88,7 +88,7 @@ export function ExperienceSection() {
           <motion.aside
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-6"
           >
