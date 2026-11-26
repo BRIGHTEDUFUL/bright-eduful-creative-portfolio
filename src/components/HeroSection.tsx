@@ -56,30 +56,73 @@ export function HeroSection() {
 
         {/* Monumental layered typography + commanding studio portrait */}
         <div className="relative flex w-full flex-1 flex-col items-center justify-end">
-          <motion.h1
+          {/* Arched cinematic display name framing the portrait */}
+          <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display pointer-events-none absolute top-[14%] inset-x-0 z-0 select-none text-center text-[clamp(4.5rem,17.5vw,16rem)] leading-[0.84] tracking-[0.02em] bg-gradient-to-r from-foreground/10 via-foreground/42 to-foreground/10 bg-clip-text text-transparent sm:top-[12%]"
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="pointer-events-none relative z-0 -mb-24 w-full max-w-[920px] select-none sm:-mb-36 lg:-mb-44"
           >
-            {PROFILE.firstName} {PROFILE.lastName}
-          </motion.h1>
+            <h1 className="sr-only">
+              {PROFILE.firstName} {PROFILE.lastName}
+            </h1>
+            <svg
+              viewBox="0 0 1000 320"
+              aria-hidden="true"
+              className="h-auto w-full overflow-visible"
+            >
+              <defs>
+                <path
+                  id="hero-name-arc"
+                  d="M 65,300 A 455,250 0 0,1 935,300"
+                  fill="none"
+                />
+                <linearGradient id="hero-name-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="var(--foreground)" stopOpacity="0.32" />
+                  <stop offset="28%" stopColor="var(--foreground)" stopOpacity="0.92" />
+                  <stop offset="50%" stopColor="var(--primary)" stopOpacity="1" />
+                  <stop offset="72%" stopColor="var(--foreground)" stopOpacity="0.92" />
+                  <stop offset="100%" stopColor="var(--foreground)" stopOpacity="0.32" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 115,310 A 410,218 0 0,1 885,310"
+                fill="none"
+                stroke="var(--primary)"
+                strokeOpacity="0.22"
+                strokeWidth="1.25"
+              />
+              <text
+                fill="url(#hero-name-grad)"
+                className="font-display text-[118px] tracking-[0.07em]"
+              >
+                <textPath
+                  href="#hero-name-arc"
+                  startOffset="50%"
+                  textAnchor="middle"
+                >
+                  {PROFILE.firstName} {PROFILE.lastName}
+                </textPath>
+              </text>
+            </svg>
+          </motion.div>
 
+          {/* Seamlessly integrated studio portrait nested inside the arch */}
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 mt-6 w-[320px] sm:w-[420px] lg:w-[500px]"
+            className="relative z-10 w-[300px] sm:w-[390px] lg:w-[460px]"
           >
             <div className="relative">
               <img
                 src={ASSETS.heroPortrait}
                 alt="Bright Eduful studio portrait"
-                className="h-[420px] w-full object-cover object-top mix-blend-lighten contrast-105 sm:h-[520px] lg:h-[600px]"
+                className="portrait-feather h-[380px] w-full object-cover object-top mix-blend-lighten contrast-105 sm:h-[470px] lg:h-[540px]"
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-background via-background/75 to-transparent"
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent"
               />
             </div>
           </motion.div>

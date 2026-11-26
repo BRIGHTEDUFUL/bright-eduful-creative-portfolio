@@ -168,10 +168,25 @@
 
 @utility hero-spotlight {
   background: radial-gradient(
-    circle at 50% 42%,
-    oklch(0.42 0.13 42 / 48%) 0%,
-    oklch(0.22 0.06 40 / 28%) 34%,
-    oklch(0.095 0.012 42 / 0%) 70%
+    ellipse 58% 52% at 50% 54%,
+    oklch(0.38 0.12 42 / 44%) 0%,
+    oklch(0.2 0.055 42 / 24%) 38%,
+    oklch(0.095 0.012 42 / 0%) 74%
+  );
+}
+
+@utility portrait-feather {
+  -webkit-mask-image: radial-gradient(
+    ellipse 56% 64% at 50% 44%,
+    #000 54%,
+    rgb(0 0 0 / 65%) 74%,
+    transparent 98%
+  );
+  mask-image: radial-gradient(
+    ellipse 56% 64% at 50% 44%,
+    #000 54%,
+    rgb(0 0 0 / 65%) 74%,
+    transparent 98%
   );
 }
 
